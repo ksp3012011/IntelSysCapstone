@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>알람 설정</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="alert-container">
+        <h2>알림 설정</h2>
+
+        <div class="section">
+            <h3>받을 정보</h3>
+            <label><input type="checkbox" name="info" value="news"> 오늘의 뉴스</label>
+            <label><input type="checkbox" name="info" value="stocks" checked> 떠오르는 종목</label>
+            <label><input type="checkbox" name="info" value="government"> 정부의 한 마디</label>
+        </div>
+
+        <div class="section">
+            <h3>수신 설정</h3>
+            <label><input type="checkbox" name="days" value="mon" checked> 월</label>
+            <label><input type="checkbox" name="days" value="tue"> 화</label>
+            <label><input type="checkbox" name="days" value="wed" checked> 수</label>
+            <label><input type="checkbox" name="days" value="thu"> 목</label>
+            <label><input type="checkbox" name="days" value="fri"> 금</label>
+        </div>
+
+        <div class="time-section">
+            <p>시간: <input type="time" value="13:00"></p>
+        </div>
+    </div>
+</body>
+</html>

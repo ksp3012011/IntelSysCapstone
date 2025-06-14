@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>투자 전략 선택</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='strategy.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        select, textarea, button {
+            width: 100%;
+            margin-top: 10px;
+            padding: 8px;
+        }
+        textarea {
+            height: 60px;
+            resize: none;
+        }
+        .highlight {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="strategy-container">
+        <h3>현재 전략</h3>
+        <form method="POST">
+            <select name="strategy" id="strategySelect" onchange="updateDescription()">
+                {% for strategy in strategies %}
+                <option value="{{ strategy }}" {% if strategy == selected_strategy %}selected{% endif %}>{{ strategy }}</option>
+                {% endfor %}
+            </select>
+            <textarea id="description" name="description">{{ description }}</textarea>
+            <button type="submit">등록하기</button>
+        </form>
+        <p>사용자의 투자 성향은 <span class="highlight">{{ selected_strategy }} 스타일의 투자 전략</span>에 가까워 보입니다.</p>
+    </div>
+
+    <script>
+        function updateDescription() {
+            const descriptions = {
+                "A": "A 전략은 안정적인 투자 방식입니다.",
+                "B": "B 전략은 중간 리스크를 감수하는 방식입니다.",
+                "C": "C 전략은 고위험 고수익 방식입니다."
+            };
+            let selected = document.getElementById("strategySelect").value;
+            document.getElementById("description").value = descriptions[selected];
+        }
+    </script>
+</body>
+</html>

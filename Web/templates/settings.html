@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>설정 페이지</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='settings.css') }}">
+</head>
+<body>
+    <div class="settings-container">
+        <form method="post" action="/save_settings">
+            <div class="setting-item">
+                <button type="button" class="label-btn">BTC 자동매매</button>
+                <input type="checkbox" name="btc_auto" {% if btc_auto %}checked{% endif %}>
+            </div>
+            <div class="setting-item">
+                <button type="button" class="label-btn">주식 자동매매</button>
+                <input type="checkbox" name="stock_auto" {% if stock_auto %}checked{% endif %}>
+            </div>
+            <div class="setting-item">
+                <button type="button" class="label-btn">메일 수신</button>
+                <input type="checkbox" name="mail_receive" {% if mail_receive %}checked{% endif %}>
+            </div>
+            <button type="submit" class="save-btn"><b>저장 후 돌아가기</b></button>
+        </form>
+    </div>
+</body>
+</html>

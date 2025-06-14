@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오늘의 뉴스</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='news.css') }}">
+</head>
+<body>
+    <div class="news-container">
+        <h2>{{ date }} 소식</h2>
+        <p class="news-title">{{ news.title }}</p>
+        <p class="news-content">{{ news.description }}</p>
+
+        <!--<div class="ai-judgment">
+            <h3>AI의 판단</h3>
+            <p>금리 인상 기조가 보이고 있으므로 여기에 대응할 수 있는 A에 투자를 하면 좋을 것 같습니다.</p>
+        </div>-->
+
+        <div class="button-group">
+            <button class="btn red">투자 진행</button>
+            <button class="btn gray" onclick="window.location.reload()">다른뉴스</button>
+        </div>
+        <button class="btn blue full-width">매매 현황으로</button>
+    </div>
+</body>
+</html>

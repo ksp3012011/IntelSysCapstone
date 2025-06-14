@@ -1,0 +1,50 @@
+.settings-container {
+    width: 250px;
+    padding: 20px;
+    text-align: center;
+}
+
+.setting-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.label-btn {
+    width: 120px;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: default;
+}
+
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #000;
+    border-radius: 5px;
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+input[type="checkbox"]:checked {
+    background-color: #6495ED; /* 파란색 체크 */
+}
+
+.save-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.save-btn:hover {
+    background-color: #45a049;
+}

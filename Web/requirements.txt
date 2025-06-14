@@ -1,0 +1,25 @@
+Flask==3.0.0  # Flask 웹 프레임워크
+Flask-SQLAlchemy==3.0.0  # ORM (데이터베이스 관리)
+Flask-Migrate==4.0.5  # DB 마이그레이션 지원
+Flask-Login==0.6.3  # 사용자 인증 (로그인)
+Flask-Mail==0.9.1  # SMTP 메일 전송 기능
+Flask-WTF==1.1.1  # Form 관리 및 CSRF 보호
+python-dotenv==1.0.1  # 환경변수 (.env 파일)
+gunicorn==21.2.0  # 배포 시 WSGI 서버
+Werkzeug==3.0.1  # Flask 내부에서 사용 (보안 및 유틸)
+Jinja2==3.1.2  # 템플릿 엔진 (Flask 내장)
+mysql-connector-python==8.2.0  # MySQL 드라이버 (MySQL 사용 시)
+requests==2.28.1  # HTTP 요청 라이브러리 (API 호출 등)
+python-dotenv==1.0.1  # 환경변수 (.env 파일)
+pyjwt==2.6.0  # JWT (JSON Web Token) 처리
+APScheduler==3.10.1  # 주기적인 작업 스케줄링
+pyupbit
+openai
+ta
+numpy
+scipy
+pandas
+pykrx
+mojito2
+schedule
+matplotlib

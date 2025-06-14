@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>나의 투자 현황</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='investment.css') }}">
+    <script>
+    // 1000ms = 1초마다 페이지 새로고침
+    setInterval(function() {
+        location.reload();
+    }, 10000);
+</script>
+</head>
+<body>
+    <nav class="navbar">
+        <ul class="navbar-menu">
+            <li><a href="{{ url_for('settings') }}">세팅</a></li>
+        </ul>
+    </nav>
+    <div class="investment-container">
+        {% for invest in investments %}
+        <div class="investment-card">
+            <div class="investment-main">
+                <div class="investment-name">{{ invest.name }}</div>
+                <div class="investment-price">{{ invest.price }}원</div>
+            </div>
+            <div class="investment-sub">
+                <div class="investment-amount">{{invest.amount}}개</div>
+                <div class="investment-change {% if '-' in invest.change %}negative{% else %}positive{% endif %}">
+                    {{ invest.change }}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
